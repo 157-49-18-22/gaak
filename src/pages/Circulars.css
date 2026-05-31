@@ -1,0 +1,413 @@
+/* ════════════════════════════════════════════════
+   CIRCULARS & NOTIFICATIONS PAGE
+════════════════════════════════════════════════ */
+
+.circ-page {
+  background: #050a11; /* Very dark background */
+  color: #fff;
+  min-height: 100vh;
+}
+
+.text-gradient-cyan {
+  background: linear-gradient(90deg, #38bdf8, #3b82f6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ── 1. HERO ─────────────────────────────────────── */
+.circ-hero {
+  position: relative;
+  padding: 140px 0 60px;
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+}
+
+.circ-hero__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.circ-hero__bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: hue-rotate(-15deg) contrast(1.1); /* Match reference style */
+}
+
+.circ-hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(5, 10, 17, 0.8) 0%,
+    rgba(5, 10, 17, 0.95) 100%
+  );
+}
+
+.circ-hero__content {
+  position: relative;
+  z-index: 10;
+  max-width: 800px; /* Align mostly left */
+}
+
+.circ-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(8, 145, 178, 0.15); /* cyan tint transparent */
+  border: 1px solid rgba(8, 145, 178, 0.4);
+  color: #22d3ee;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  padding: 8px 16px;
+  border-radius: 999px;
+  margin-bottom: 24px;
+}
+
+.circ-badge .material-symbols-outlined {
+  font-size: 16px;
+}
+
+.circ-title {
+  font-family: var(--font-headline);
+  font-size: 56px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin-bottom: 20px;
+  line-height: 1.1;
+}
+
+.circ-desc {
+  font-size: 16px;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.65);
+  max-width: 650px;
+}
+
+/* ── 2. MAIN & FILTERS ────────────────────────────── */
+.circ-main {
+  padding-bottom: 120px;
+  position: relative;
+  z-index: 20;
+}
+
+.circ-filters-wrapper {
+  margin-top: -30px;
+  margin-bottom: 60px;
+  position: relative;
+  z-index: 30;
+}
+
+.circ-filters {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(24px);
+  padding: 12px 24px;
+  border-radius: 999px;
+  width: fit-content;
+}
+
+.circ-filters__label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  color: rgba(255, 255, 255, 0.5);
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+  padding-right: 32px;
+}
+
+.circ-filters__label .material-symbols-outlined {
+  font-size: 18px;
+}
+
+.circ-filters__btns {
+  display: flex;
+  gap: 8px;
+}
+
+.circ-filter-btn {
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  padding: 10px 20px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-transform: uppercase;
+}
+
+.circ-filter-btn:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.circ-filter-btn--active {
+  background: #fff !important;
+  color: #050a11 !important;
+}
+
+/* ── 3. LIST & TIMELINE ───────────────────────────── */
+.circ-list {
+  position: relative;
+  padding-left: 60px; /* space for timeline */
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+/* Timeline Vertical Line */
+.circ-list__line {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 20px;
+  width: 1px;
+  background: rgba(255, 255, 255, 0.08);
+  z-index: 0;
+}
+
+.circ-item {
+  position: relative;
+  z-index: 1;
+}
+
+/* Timeline Node */
+.circ-item__node {
+  position: absolute;
+  left: -60px; /* align over line */
+  top: 40px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #050a11;
+  border: 1px solid; /* color set inline */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.circ-item__icon-wrap {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.circ-item__icon-wrap .material-symbols-outlined {
+  font-size: 14px;
+}
+
+/* Content Card */
+.circ-card {
+  position: relative;
+  background: linear-gradient(160deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.01) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+  padding: 40px;
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05), 0 8px 16px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(12px);
+  overflow: hidden;
+}
+
+.circ-card::after {
+  content: '';
+  position: absolute;
+  top: 0; right: 0; width: 150px; height: 150px;
+  background: radial-gradient(circle at 100% 0%, rgba(56, 189, 248, 0.15), transparent 70%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.circ-card:hover {
+  background: linear-gradient(160deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.02) 100%);
+  border-color: rgba(56, 189, 248, 0.3);
+  transform: translateY(-6px) scale(1.01);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 24px 48px rgba(0, 0, 0, 0.4), 0 0 30px rgba(56, 189, 248, 0.1);
+}
+
+.circ-card:hover::after {
+  opacity: 1;
+}
+
+.circ-hover-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  z-index: 0;
+  mix-blend-mode: overlay;
+  pointer-events: none;
+}
+
+.circ-card:hover .circ-hover-bg {
+  opacity: 0.25;
+}
+
+.circ-card > *:not(.circ-hover-bg) {
+  position: relative;
+  z-index: 1;
+}
+
+.circ-card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.circ-card__tag {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  padding: 6px 14px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.circ-card__date {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.circ-card__title {
+  font-family: var(--font-headline);
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  line-height: 1.25;
+}
+
+.circ-card__desc {
+  font-size: 15px;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.55);
+  margin-bottom: 32px;
+}
+
+.circ-card__footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.circ-card__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.circ-card__link:hover {
+  color: #fff;
+}
+
+.circ-card__link .material-symbols-outlined {
+  font-size: 16px;
+  transition: transform 0.2s;
+}
+
+.circ-card__link:hover .material-symbols-outlined {
+  transform: translateX(4px);
+}
+
+.circ-card__download {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.circ-card__download:hover {
+  background: #fff;
+  color: #050a11;
+}
+
+.circ-card__download .material-symbols-outlined {
+  font-size: 18px;
+}
+
+.circ-empty {
+  padding: 40px;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 14px;
+}
+
+@media (max-width: 900px) {
+  .circ-title { font-size: 42px; }
+  .circ-filters {
+    flex-wrap: wrap;
+    border-radius: 20px;
+    padding: 20px;
+  }
+  .circ-filters__label {
+    border-right: none;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding-right: 0;
+    padding-bottom: 12px;
+    width: 100%;
+  }
+  .circ-filters__btns {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 600px) {
+  .circ-list {
+    padding-left: 20px;
+  }
+  .circ-item__node {
+    display: none;
+  }
+  .circ-list__line {
+    display: none;
+  }
+  .circ-card {
+    padding: 24px;
+  }
+  .circ-card__header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .circ-title { font-size: 36px; }
+}

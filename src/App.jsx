@@ -1,7 +1,11 @@
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './index.css';
 import './components/shared.css';
 
 import Navbar from './components/Navbar';
+import Footer from './components/Footer';
+
+/* Home page sections */
 import Hero from './components/Hero';
 import Stats from './components/Stats';
 import ProductsSolutions from './components/ProductsSolutions';
@@ -14,27 +18,46 @@ import Impact from './components/Impact';
 import CaseStudies from './components/CaseStudies';
 import Testimonials from './components/Testimonials';
 import CTA from './components/CTA';
-import Footer from './components/Footer';
+
+/* Pages */
+import AboutUs from './pages/AboutUs';
+import Products from './pages/Products';
+import Careers from './pages/Careers';
+import Contact from './pages/Contact';
+import Circulars from './pages/Circulars';
+
+function HomePage() {
+  return (
+    <main>
+      <Hero />
+      <Stats />
+      <ProductsSolutions />
+      <Capabilities />
+      <Industries />
+      <Strengths />
+      <Timeline />
+      <Certifications />
+      <Impact />
+      <CaseStudies />
+      <Testimonials />
+      <CTA />
+    </main>
+  );
+}
 
 export default function App() {
   return (
-    <>
+    <BrowserRouter>
       <Navbar />
-      <main>
-        <Hero />
-        <Stats />
-        <ProductsSolutions />
-        <Capabilities />
-        <Industries />
-        <Strengths />
-        <Timeline />
-        <Certifications />
-        <Impact />
-        <CaseStudies />
-        <Testimonials />
-        <CTA />
-      </main>
+      <Routes>
+        <Route path="/"          element={<HomePage />} />
+        <Route path="/about"     element={<AboutUs />} />
+        <Route path="/products"  element={<Products />} />
+        <Route path="/circulars" element={<Circulars />} />
+        <Route path="/careers"   element={<Careers />} />
+        <Route path="/contact"   element={<Contact />} />
+      </Routes>
       <Footer />
-    </>
+    </BrowserRouter>
   );
 }
