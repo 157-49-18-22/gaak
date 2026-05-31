@@ -1,57 +1,114 @@
 .certifications {
   padding: var(--section-gap) 0;
-  background: var(--surface-muted);
+  background: var(--clinical-white);
+  position: relative;
+  overflow: hidden;
+}
+
+.certifications::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle at 1px 1px, rgba(0,45,103,0.04) 1px, transparent 0);
+  background-size: 28px 28px;
+  pointer-events: none;
 }
 
 .certifications__grid {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  gap: 20px;
+  gap: 16px;
+  position: relative;
+  z-index: 1;
 }
 
+/* ── Base card ── */
 .cert-card {
-  background: var(--clinical-white);
-  border: 1px solid var(--outline-variant);
-  border-radius: var(--radius-xl);
-  padding: 32px 20px;
+  background: linear-gradient(145deg, #ffffff, #f0f5ff);
+  border: 1px solid rgba(0, 45, 103, 0.1);
+  border-radius: 20px;
+  padding: 36px 16px 28px;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
   gap: 14px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
   cursor: default;
 }
 
+/* Top colour bar */
+.cert-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #1a7dc4, #00b4d8);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+  border-radius: 20px 20px 0 0;
+}
+
+.cert-card:hover::before { transform: scaleX(1); }
+
 .cert-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 32px rgba(0, 45, 103, 0.1);
+  transform: translateY(-8px);
+  box-shadow: 0 20px 48px rgba(0, 45, 103, 0.14);
+  border-color: rgba(26, 125, 196, 0.3);
 }
 
+/* Special Great Place to Work */
 .cert-card--special {
-  border-top: 3px solid #e63329;
+  background: linear-gradient(145deg, #fff5f5, #fff0f0);
+  border-color: rgba(230, 51, 41, 0.15);
+}
+.cert-card--special::before {
+  background: linear-gradient(90deg, #e63329, #f97316);
 }
 
+/* Icon ring */
 .cert-card__icon-ring {
-  width: 80px;
-  height: 80px;
+  width: 88px;
+  height: 88px;
   border-radius: 50%;
   border: 3px solid #1a7dc4;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  background: rgba(26, 125, 196, 0.05);
+}
+
+.cert-card:hover .cert-card__icon-ring {
+  transform: scale(1.08) rotate(-5deg);
+  box-shadow: 0 8px 24px rgba(26, 125, 196, 0.25);
+}
+
+.cert-card--special .cert-card__icon-ring {
+  border-color: #e63329;
+  background: rgba(230, 51, 41, 0.05);
+}
+
+.cert-card--special:hover .cert-card__icon-ring {
+  box-shadow: 0 8px 24px rgba(230, 51, 41, 0.25);
 }
 
 .cert-card__icon-ring .material-symbols-outlined {
-  font-size: 38px;
+  font-size: 40px;
 }
 
 .cert-card__label {
   font-family: var(--font-body);
   font-size: 13px;
-  font-weight: 700;
+  font-weight: 800;
   line-height: 1.4;
+  letter-spacing: 0.02em;
 }
 
 .cert-card__desc {
@@ -60,14 +117,6 @@
   line-height: 1.5;
 }
 
-@media (max-width: 1000px) {
-  .certifications__grid { grid-template-columns: repeat(3, 1fr); }
-}
-
-@media (max-width: 640px) {
-  .certifications__grid { grid-template-columns: repeat(2, 1fr); }
-}
-
-@media (max-width: 380px) {
-  .certifications__grid { grid-template-columns: 1fr; }
-}
+@media (max-width: 1000px) { .certifications__grid { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 640px)  { .certifications__grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 380px)  { .certifications__grid { grid-template-columns: 1fr; } }

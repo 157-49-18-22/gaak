@@ -21,7 +21,7 @@ export default function CTA() {
               </span>
               <div>
                 <p className="cta__contact-label">Call Us Directly</p>
-                <p className="cta__contact-value">+1 (800) PROVIGIL</p>
+                <p className="cta__contact-value">+91 98765 43210</p>
               </div>
             </div>
             <div className="cta__contact-item">
@@ -30,7 +30,7 @@ export default function CTA() {
               </span>
               <div>
                 <p className="cta__contact-label">Email Our Experts</p>
-                <p className="cta__contact-value">solutions@provigil.com</p>
+                <p className="cta__contact-value">solutions@gaak.in</p>
               </div>
             </div>
           </div>

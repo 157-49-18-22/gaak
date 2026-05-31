@@ -39,8 +39,8 @@ export default function Strengths() {
         </div>
 
         <div className="strengths__grid">
-          {STRENGTHS.map((s) => (
-            <div key={s.title} className="strength-card">
+          {STRENGTHS.map((s, i) => (
+            <div key={s.title} className="strength-card" data-num={`0${i + 1}`}>
               <div className="strength-card__icon">
                 <span className="material-symbols-outlined" style={{ fontVariationSettings: "'FILL' 1" }}>
                   {s.icon}

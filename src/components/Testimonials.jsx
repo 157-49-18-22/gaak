@@ -3,13 +3,13 @@ import './Testimonials.css';
 const TESTIMONIALS = [
   {
     quote:
-      '"Provigil\'s integrated ecosystem has completely transformed our approach to facility security. The AI analytics reduced false alarms by 85%, allowing our team to focus only on critical events."',
+      '"Gaak\'s integrated ecosystem has completely transformed our approach to facility security. The AI analytics reduced false alarms by 85%, allowing our team to focus only on critical events."',
     name: 'James Arrington',
     role: 'Chief Security Officer, Global Logistics Hub',
   },
   {
     quote:
-      '"As a smart city initiative, we needed a partner who understood both infrastructure and intelligence. Provigil delivered a unified command center that manages thousands of devices flawlessly."',
+      '"As a smart city initiative, we needed a partner who understood both infrastructure and intelligence. Gaak delivered a unified command center that manages thousands of devices flawlessly."',
     name: 'Sarah Chen',
     role: 'Director of Urban Safety, Municipal Council',
   },

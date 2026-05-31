@@ -35,7 +35,7 @@ export default function Impact() {
             Measurable Impact.<br />Real-World Outcomes.
           </h2>
           <p className="impact__desc">
-            Provigil delivers tangible improvements by transforming surveillance
+            Gaak delivers tangible improvements by transforming surveillance
             into intelligence that drives faster response, better coordination,
             and stronger compliance.
           </p>

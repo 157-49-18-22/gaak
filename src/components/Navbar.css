@@ -4,119 +4,119 @@
   left: 0;
   right: 0;
   z-index: 50;
-  transition: background 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
-  border-bottom: 1px solid transparent;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 0;
 }
 
-/* ── Transparent state (on hero) ── */
+/* ── Transparent (on hero) ── */
 .navbar--transparent {
   background: transparent;
-  border-bottom-color: rgba(255, 255, 255, 0.1);
 }
 
-/* ── Scrolled state ── */
+/* ── Scrolled: floating pill ── */
 .navbar--scrolled {
-  background: rgba(255, 255, 255, 0.96);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  border-bottom: 1px solid var(--outline-variant);
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.07);
+  top: 14px;
+  left: 50%;
+  right: auto;
+  transform: translateX(-50%);
+  width: min(960px, calc(100% - 48px));
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(0, 45, 103, 0.12);
+  border-radius: 999px;
+  box-shadow:
+    0 8px 32px rgba(0, 45, 103, 0.12),
+    0 2px 8px rgba(0, 0, 0, 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
 }
 
+/* Inner layout */
 .navbar__inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 80px;
+  height: 72px;
+  padding: 0 32px;
+}
+
+.navbar--scrolled .navbar__inner {
+  height: 58px;
+  padding: 0 24px;
 }
 
 /* Logo */
 .navbar__logo img {
-  height: 44px;
+  height: 40px;
   width: auto;
   object-fit: contain;
   display: block;
-  transition: filter 0.35s ease;
+  transition: height 0.4s ease;
 }
 
-/* White logo on transparent dark hero */
-.navbar__logo--invert {
-  filter: brightness(0) invert(1);
+.navbar--scrolled .navbar__logo img {
+  height: 34px;
 }
 
 /* ── Nav links ── */
 .navbar__nav {
   display: flex;
   align-items: center;
-  gap: 32px;
+  gap: 28px;
 }
 
 .navbar__link {
   font-family: var(--font-body);
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 600;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
-  transition: color 0.25s ease, border-color 0.25s ease;
   padding-bottom: 2px;
   border-bottom: 2px solid transparent;
+  transition: color 0.25s, border-color 0.25s;
 }
 
-/* Transparent → white links */
-.navbar--transparent .navbar__link {
-  color: rgba(255, 255, 255, 0.85);
-}
-.navbar--transparent .navbar__link:hover {
-  color: #ffffff;
-  border-bottom-color: rgba(255, 255, 255, 0.5);
-}
-.navbar--transparent .navbar__link--active {
-  color: #ffffff;
-  border-bottom-color: #ffffff;
-}
+/* Transparent links — white */
+.navbar--transparent .navbar__link { color: rgba(255,255,255,0.85); }
+.navbar--transparent .navbar__link:hover { color: #fff; border-bottom-color: rgba(255,255,255,0.5); }
+.navbar--transparent .navbar__link--active { color: #fff; border-bottom-color: #fff; }
 
-/* Scrolled → dark links */
-.navbar--scrolled .navbar__link {
-  color: var(--on-surface-variant);
-}
-.navbar--scrolled .navbar__link:hover {
-  color: var(--primary);
-}
-.navbar--scrolled .navbar__link--active {
-  color: var(--primary);
-  border-bottom-color: var(--primary);
-}
+/* Scrolled links — dark */
+.navbar--scrolled .navbar__link { color: var(--on-surface-variant); }
+.navbar--scrolled .navbar__link:hover { color: var(--primary); }
+.navbar--scrolled .navbar__link--active { color: var(--primary); border-bottom-color: var(--primary); }
 
-/* ── Actions ── */
-.navbar__actions {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-}
+/* ── Contact button ── */
+.navbar__actions { display: flex; align-items: center; }
 
 .btn--primary {
   background: var(--primary);
-  color: var(--clinical-white);
-  padding: 11px 24px;
-  border-radius: var(--radius-sm);
-  font-size: 14px;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 999px;
+  font-size: 13px;
   font-weight: 700;
   letter-spacing: 0.05em;
   text-transform: uppercase;
-  transition: background 0.2s, transform 0.1s, opacity 0.2s;
+  transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
   display: inline-block;
+  white-space: nowrap;
 }
-.btn--primary:hover { background: var(--medical-blue-dark); }
-.btn--primary:active { transform: scale(0.97); }
 
-/* Transparent state — outlined button */
+.btn--primary:hover {
+  background: var(--medical-blue-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(0, 45, 103, 0.3);
+}
+
+/* On transparent hero — ghost button */
 .navbar--transparent .btn--primary {
-  background: rgba(255, 255, 255, 0.15);
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  backdrop-filter: blur(6px);
+  background: rgba(255,255,255,0.15);
+  border: 1px solid rgba(255,255,255,0.55);
+  backdrop-filter: blur(8px);
 }
 .navbar--transparent .btn--primary:hover {
-  background: rgba(255, 255, 255, 0.28);
+  background: rgba(255,255,255,0.28);
 }
 
 /* ── Hamburger ── */
@@ -124,17 +124,18 @@
   display: none;
   transition: color 0.3s;
 }
-.navbar--transparent .navbar__hamburger { color: #ffffff; }
+.navbar--transparent .navbar__hamburger { color: #fff; }
 .navbar--scrolled .navbar__hamburger   { color: var(--primary); }
 
 /* ── Mobile menu ── */
 .navbar__mobile-menu {
   display: none;
   flex-direction: column;
-  padding: 16px var(--margin-mobile) 24px;
+  padding: 16px 24px 24px;
   border-top: 1px solid var(--outline-variant);
-  background: rgba(255, 255, 255, 0.97);
+  background: rgba(255,255,255,0.97);
   gap: 4px;
+  border-radius: 0 0 24px 24px;
 }
 
 .navbar__mobile-link {
@@ -147,7 +148,6 @@
   text-transform: uppercase;
   transition: background 0.2s, color 0.2s;
 }
-
 .navbar__mobile-link:hover,
 .navbar__mobile-link--active {
   color: var(--primary);
@@ -155,10 +155,10 @@
 }
 
 .navbar__mobile-actions {
+  margin-top: 16px;
   display: flex;
   flex-direction: column;
   gap: 12px;
-  margin-top: 16px;
 }
 
 /* ── Responsive ── */
@@ -167,4 +167,10 @@
   .navbar__actions { display: none; }
   .navbar__hamburger { display: block; }
   .navbar__mobile-menu { display: flex; }
+
+  /* On mobile, pill still works but full-width */
+  .navbar--scrolled {
+    width: calc(100% - 24px);
+    border-radius: 20px;
+  }
 }

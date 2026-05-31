@@ -1,3 +1,4 @@
+import { useEffect, useRef } from 'react';
 import './Timeline.css';
 
 const EVENTS = [
@@ -51,6 +52,60 @@ const EVENTS = [
   },
 ];
 
+function TimelineItem({ ev, index }) {
+  const ref = useRef(null);
+  const isLeft = index % 2 === 0;
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          el.classList.add('tl-item--visible');
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.2 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <div
+      ref={ref}
+      className={`tl-item ${isLeft ? 'tl-item--left' : 'tl-item--right'}`}
+    >
+      {/* Card */}
+      <div className="tl-card">
+        <div className="tl-card__inner">
+          <div className="tl-card__icon-row">
+            <span
+              className="material-symbols-outlined tl-card__icon"
+              style={{ fontVariationSettings: "'FILL' 1" }}
+            >
+              {ev.icon}
+            </span>
+          </div>
+          <h3 className="tl-card__title">{ev.title}</h3>
+          <p className="tl-card__desc">{ev.desc}</p>
+        </div>
+        <div className="tl-card__arrow" />
+      </div>
+
+      {/* Centre node */}
+      <div className="tl-node">
+        <div className="tl-node__ring" />
+        <span className="tl-node__year">{ev.year}</span>
+      </div>
+
+      {/* Spacer */}
+      <div className="tl-spacer" />
+    </div>
+  );
+}
+
 export default function Timeline() {
   return (
     <section className="timeline">
@@ -69,41 +124,9 @@ export default function Timeline() {
       <div className="timeline__body">
         <div className="container">
           <div className="timeline__track">
-            {/* Centre glow line */}
             <div className="timeline__line" />
-
             {EVENTS.map((ev, i) => (
-              <div
-                key={ev.year}
-                className={`tl-item ${i % 2 === 0 ? 'tl-item--left' : 'tl-item--right'}`}
-              >
-                {/* Card */}
-                <div className="tl-card">
-                  <div className="tl-card__inner">
-                    <div className="tl-card__icon-row">
-                      <span
-                        className="material-symbols-outlined tl-card__icon"
-                        style={{ fontVariationSettings: "'FILL' 1" }}
-                      >
-                        {ev.icon}
-                      </span>
-                    </div>
-                    <h3 className="tl-card__title">{ev.title}</h3>
-                    <p className="tl-card__desc">{ev.desc}</p>
-                  </div>
-                  {/* connector arrow */}
-                  <div className="tl-card__arrow" />
-                </div>
-
-                {/* Centre node */}
-                <div className="tl-node">
-                  <div className="tl-node__ring" />
-                  <span className="tl-node__year">{ev.year}</span>
-                </div>
-
-                {/* Spacer (opposite side) */}
-                <div className="tl-spacer" />
-              </div>
+              <TimelineItem key={ev.year} ev={ev} index={i} />
             ))}
           </div>
         </div>

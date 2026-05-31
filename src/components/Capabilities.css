@@ -2,7 +2,8 @@
 
 .capabilities {
   position: relative;
-  background: #060d1a;
+  background: linear-gradient(180deg, #0a1628 0%, #0f2040 100%);
+
   padding: 100px 0 120px;
   overflow: hidden;
 }
@@ -85,17 +86,17 @@
   transition: transform 0.7s ease;
 }
 
-.cap-hero-img:hover img { transform: scale(1.05); }
+.cap-hero-img:hover img {
+  transform: scale(1.05);
+}
 
 .cap-hero-img__overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    to top,
-    rgba(6, 13, 26, 0.85) 0%,
-    rgba(6, 13, 26, 0.2) 60%,
-    transparent 100%
-  );
+  background: linear-gradient(to top,
+      rgba(6, 13, 26, 0.85) 0%,
+      rgba(6, 13, 26, 0.2) 60%,
+      transparent 100%);
 }
 
 .cap-hero-img__badge {
@@ -154,7 +155,9 @@
   pointer-events: none;
 }
 
-.cap-item:hover .cap-item__glow { opacity: 0.2; }
+.cap-item:hover .cap-item__glow {
+  opacity: 0.2;
+}
 
 .cap-item:hover {
   transform: translateY(-6px);
@@ -179,7 +182,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, var(--accent, #3b82f6) 0%, rgba(255,255,255,0.05) 100%);
+  background: linear-gradient(135deg, var(--accent, #3b82f6) 0%, rgba(255, 255, 255, 0.05) 100%);
   flex-shrink: 0;
 }
 
@@ -235,7 +238,9 @@
   border-radius: 0 0 20px 20px;
 }
 
-.cap-item:hover .cap-item__line { opacity: 1; }
+.cap-item:hover .cap-item__line {
+  opacity: 1;
+}
 
 /* ── CTA ── */
 .cap-cta {
@@ -267,17 +272,35 @@
   transform: translateY(-2px);
 }
 
-.cap-cta__btn .material-symbols-outlined { font-size: 20px; }
+.cap-cta__btn .material-symbols-outlined {
+  font-size: 20px;
+}
 
 /* ── Responsive ── */
 @media (max-width: 1000px) {
-  .cap-grid { grid-template-columns: repeat(2, 1fr); }
-  .cap-heading { font-size: 34px; }
+  .cap-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .cap-heading {
+    font-size: 34px;
+  }
 }
 
 @media (max-width: 700px) {
-  .cap-hero-row { grid-template-columns: 1fr; }
-  .cap-hero-img--sm { height: 200px; }
-  .cap-grid { grid-template-columns: 1fr; }
-  .cap-heading { font-size: 28px; }
+  .cap-hero-row {
+    grid-template-columns: 1fr;
+  }
+
+  .cap-hero-img--sm {
+    height: 200px;
+  }
+
+  .cap-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cap-heading {
+    font-size: 28px;
+  }
 }

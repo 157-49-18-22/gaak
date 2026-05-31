@@ -26,8 +26,7 @@ export default function Navbar() {
         <a href="#" className="navbar__logo">
           <img
             src="/logo.png"
-            alt="Provigil Logo"
-            className={scrolled ? '' : 'navbar__logo--invert'}
+            alt="Gaak Logo"
           />
         </a>
 

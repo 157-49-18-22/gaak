@@ -3,9 +3,9 @@ import './Footer.css';
 const LOGO_URL = '/logo.png';
 
 const QUICK_LINKS = [
-  'About Provigil',
-  'About Magellanic',
-  'Why Provigil',
+  'About Gaak',
+  'Our Products',
+  'Why Gaak',
   'Clients',
   'Careers',
 ];
@@ -24,10 +24,10 @@ export default function Footer() {
       <div className="footer__grid container">
         {/* Brand */}
         <div className="footer__brand">
-          <img src={LOGO_URL} alt="Provigil Logo" className="footer__logo" />
+          <img src={LOGO_URL} alt="Gaak Logo" className="footer__logo" />
           <p className="footer__tagline">
-            Provigil Surveillance &amp; Systems Integration. Delivering intelligent
-            surveillance ecosystems for the modern era.
+            Gaak — Engineering end-to-end security, surveillance and biometric
+            solutions for a smarter, safer India.
           </p>
           <div className="footer__socials">
             {/* LinkedIn */}
@@ -78,7 +78,7 @@ export default function Footer() {
             </button>
           </form>
           <div className="footer__copy">
-            © 2024 Provigil Surveillance &amp; Systems Integration. All Rights Reserved.
+            © 2025 Gaak Technologies. All Rights Reserved.
           </div>
         </div>
       </div>

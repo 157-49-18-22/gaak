@@ -1,7 +1,6 @@
 import './Hero.css';
 
-const HERO_IMG =
-  'https://lh3.googleusercontent.com/aida/ADBb0uiX82WZQ9ITri3PXE61PfJMxRKcubqxuJNNRzvb0YygiJKHUIaBZH5hcAABZpmQdY7UhFGv2CC6LNpy4VooknPUIfEX5532ydXboXFatV4nmwY0YEThXKSBFozImucIGs87UedEGjgRRGq_ejytmuQoD8I2m7jb447b8v0ZmcAoXw-vLpz4mVp7xgibGtMMPcDH0g6XktITyiyOK7icYBoJ5Kynm4dHqYde5TlcXMU57_pujdoYftzAyqaX';
+const HERO_IMG = '/bg.png';
 
 export default function Hero() {
   return (

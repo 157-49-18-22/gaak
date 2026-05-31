@@ -199,6 +199,37 @@
 /* Spacer */
 .tl-spacer { flex: 1; }
 
+/* ===== SCROLL ANIMATIONS ===== */
+
+/* Left card: starts hidden, translated to the left */
+.tl-item--left {
+  opacity: 0;
+  transform: translateX(-60px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+/* Right card: starts hidden, translated to the right */
+.tl-item--right {
+  opacity: 0;
+  transform: translateX(60px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+/* When IntersectionObserver adds .tl-item--visible */
+.tl-item--visible {
+  opacity: 1 !important;
+  transform: translateX(0) !important;
+}
+
+/* Stagger delay based on position — add small delays */
+.tl-item:nth-child(2)  { transition-delay: 0.05s; }
+.tl-item:nth-child(3)  { transition-delay: 0.10s; }
+.tl-item:nth-child(4)  { transition-delay: 0.05s; }
+.tl-item:nth-child(5)  { transition-delay: 0.10s; }
+.tl-item:nth-child(6)  { transition-delay: 0.05s; }
+.tl-item:nth-child(7)  { transition-delay: 0.10s; }
+.tl-item:nth-child(8)  { transition-delay: 0.05s; }
+
 /* ===== MOBILE ===== */
 @media (max-width: 750px) {
   .timeline__heading { font-size: 28px; }
