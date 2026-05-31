@@ -1,0 +1,103 @@
+.case-studies {
+  padding: var(--section-gap) 0;
+  background: var(--surface-container-low);
+}
+
+.case-studies__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.case-card {
+  background: var(--clinical-white);
+  border: 1px solid var(--outline-variant);
+  border-radius: var(--radius-xl);
+  padding: 36px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.case-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 48px rgba(0, 45, 103, 0.12);
+}
+
+.case-card__icon {
+  width: 72px;
+  height: 72px;
+  background: var(--surface-container);
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.case-card__icon .material-symbols-outlined {
+  font-size: 36px;
+  color: var(--primary);
+}
+
+.case-card__title {
+  font-family: var(--font-headline);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--primary);
+  line-height: 1.35;
+}
+
+.case-card__desc {
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--on-surface-variant);
+  flex: 1;
+}
+
+.case-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.case-card__tag {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  background: var(--primary-container);
+  color: var(--on-primary-container);
+  padding: 3px 10px;
+  border-radius: var(--radius-full);
+}
+
+.case-card__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 4px;
+  background: var(--primary);
+  color: var(--clinical-white);
+  border-radius: var(--radius-full);
+  padding: 12px 24px;
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  transition: background 0.2s, transform 0.1s;
+  width: 100%;
+}
+
+.case-card__btn .material-symbols-outlined { font-size: 18px; }
+.case-card__btn:hover { background: var(--medical-blue-dark); }
+.case-card__btn:active { transform: scale(0.98); }
+
+@media (max-width: 900px) {
+  .case-studies__grid { grid-template-columns: 1fr; }
+}
+
+@media (min-width: 601px) and (max-width: 899px) {
+  .case-studies__grid { grid-template-columns: repeat(2, 1fr); }
+}

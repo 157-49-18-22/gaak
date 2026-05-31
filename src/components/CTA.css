@@ -1,0 +1,157 @@
+.cta {
+  position: relative;
+  padding: var(--section-gap) 0;
+  background: var(--medical-blue-dark);
+  color: var(--clinical-white);
+  overflow: hidden;
+}
+
+.cta__deco {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 33%;
+  height: 100%;
+  background: rgba(0, 45, 103, 0.2);
+  transform: skewX(-12deg) translateX(50%);
+  pointer-events: none;
+}
+
+.cta__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+  position: relative;
+  z-index: 10;
+}
+
+.cta__title {
+  font-family: var(--font-headline);
+  font-size: 48px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  margin-bottom: 24px;
+}
+
+.cta__subtitle {
+  font-size: 18px;
+  line-height: 1.7;
+  color: rgba(255,255,255,0.8);
+  margin-bottom: 40px;
+}
+
+.cta__contacts { display: flex; flex-direction: column; gap: 24px; }
+
+.cta__contact-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.cta__contact-icon {
+  width: 48px;
+  height: 48px;
+  background: var(--primary-container);
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.cta__contact-label {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--on-primary-container);
+  margin-bottom: 4px;
+}
+
+.cta__contact-value {
+  font-family: var(--font-headline);
+  font-size: 24px;
+  font-weight: 700;
+}
+
+/* Form */
+.cta__form-wrap {
+  background: var(--clinical-white);
+  padding: 40px;
+  border-radius: var(--radius-xl);
+  box-shadow: 0 25px 60px rgba(0,0,0,0.3);
+}
+
+.cta__form { display: flex; flex-direction: column; gap: 20px; }
+
+.cta__form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.cta__form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.cta__form-group label {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--medical-blue-dark);
+}
+
+.cta__form-group input,
+.cta__form-group select,
+.cta__form-group textarea {
+  width: 100%;
+  padding: 12px 16px;
+  background: var(--surface-container);
+  border: 1px solid var(--outline-variant);
+  border-radius: var(--radius-sm);
+  font-size: 16px;
+  color: var(--on-surface);
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.cta__form-group input:focus,
+.cta__form-group select:focus,
+.cta__form-group textarea:focus {
+  border-color: var(--primary);
+}
+
+.cta__form-group textarea { resize: vertical; }
+
+.cta__submit {
+  width: 100%;
+  padding: 16px;
+  background: var(--primary);
+  color: var(--clinical-white);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  box-shadow: 0 4px 15px rgba(0,45,103,0.3);
+  transition: background 0.2s, transform 0.1s;
+}
+
+.cta__submit:hover { background: var(--medical-blue-dark); }
+.cta__submit:active { transform: scale(0.98); }
+
+@media (max-width: 900px) {
+  .cta__inner { grid-template-columns: 1fr; gap: 48px; }
+  .cta__title { font-size: 36px; }
+}
+
+@media (max-width: 480px) {
+  .cta__form-row { grid-template-columns: 1fr; }
+  .cta__form-wrap { padding: 24px; }
+}

@@ -1,0 +1,77 @@
+.engagement {
+  padding: var(--section-gap) 0;
+  background: var(--clinical-white);
+}
+
+.engagement__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--gutter);
+}
+
+.engagement-card {
+  padding: 32px;
+  border: 1px solid var(--outline-variant);
+  background: var(--surface-container-lowest);
+  border-radius: var(--radius-xl);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  transition: box-shadow 0.3s ease;
+}
+
+.engagement-card:hover { box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+
+.engagement-card__icon {
+  width: 64px;
+  height: 64px;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.engagement-card__icon .material-symbols-outlined {
+  color: var(--clinical-white);
+  font-size: 32px;
+}
+
+.engagement-card__title {
+  font-family: var(--font-headline);
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.33;
+  color: var(--primary);
+}
+
+.engagement-card__desc {
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--on-surface-variant);
+}
+
+.engagement-card__features {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 8px;
+}
+
+.engagement-card__features li {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--on-surface);
+}
+
+.feature-check {
+  color: var(--secondary);
+  font-size: 22px;
+  flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+  .engagement__grid { grid-template-columns: 1fr; }
+}

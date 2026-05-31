@@ -1,0 +1,157 @@
+.products {
+  padding: var(--section-gap) 0;
+  background: var(--clinical-white);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle background pattern */
+.products::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle at 1px 1px, rgba(0,45,103,0.05) 1px, transparent 0);
+  background-size: 32px 32px;
+  pointer-events: none;
+}
+
+.products__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Card base ── */
+.product-card {
+  position: relative;
+  background: linear-gradient(145deg, #ffffff 0%, #f5f8ff 100%);
+  border: 1px solid rgba(0, 45, 103, 0.1);
+  border-radius: 20px;
+  padding: 36px 28px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  overflow: hidden;
+  transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+  cursor: pointer;
+}
+
+/* Top-right large ghost icon */
+.product-card::before {
+  content: '';
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0,45,103,0.06), transparent 70%);
+  transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+.product-card:hover::before {
+  transform: scale(1.4);
+  opacity: 1.5;
+}
+
+/* Hover glow border */
+.product-card::after {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: 21px;
+  background: linear-gradient(135deg, var(--primary), transparent 60%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: -1;
+}
+
+.product-card:hover::after { opacity: 1; }
+
+.product-card:hover {
+  transform: translateY(-8px);
+  box-shadow:
+    0 24px 56px rgba(0, 45, 103, 0.14),
+    0 8px 20px rgba(0, 45, 103, 0.08);
+  border-color: transparent;
+}
+
+/* Number badge */
+.product-card__num {
+  position: absolute;
+  top: 20px;
+  right: 24px;
+  font-family: var(--font-headline);
+  font-size: 52px;
+  font-weight: 900;
+  color: rgba(0, 45, 103, 0.06);
+  line-height: 1;
+  user-select: none;
+  transition: color 0.4s;
+}
+
+.product-card:hover .product-card__num { color: rgba(0, 45, 103, 0.1); }
+
+/* Icon */
+.product-card__icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-container) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 20px rgba(0, 45, 103, 0.25);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.product-card:hover .product-card__icon {
+  transform: scale(1.1) rotate(-4deg);
+  box-shadow: 0 12px 28px rgba(0, 45, 103, 0.35);
+}
+
+.product-card__icon .material-symbols-outlined {
+  color: var(--clinical-white);
+  font-size: 28px;
+}
+
+.product-card__title {
+  font-family: var(--font-headline);
+  font-size: 19px;
+  font-weight: 700;
+  color: var(--medical-blue-dark);
+  line-height: 1.3;
+}
+
+.product-card__desc {
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--on-surface-variant);
+  flex: 1;
+}
+
+.product-card__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--primary);
+  letter-spacing: 0.03em;
+  margin-top: 8px;
+  transition: gap 0.25s ease, color 0.25s;
+  border-top: 1px solid rgba(0, 45, 103, 0.08);
+  padding-top: 16px;
+}
+
+.product-card:hover .product-card__link { gap: 10px; color: var(--medical-blue-dark); }
+.product-card__link .material-symbols-outlined { font-size: 18px; }
+
+@media (max-width: 900px) {
+  .products__grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 560px) {
+  .products__grid { grid-template-columns: 1fr; }
+}

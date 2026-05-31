@@ -1,0 +1,73 @@
+.certifications {
+  padding: var(--section-gap) 0;
+  background: var(--surface-muted);
+}
+
+.certifications__grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+}
+
+.cert-card {
+  background: var(--clinical-white);
+  border: 1px solid var(--outline-variant);
+  border-radius: var(--radius-xl);
+  padding: 32px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 14px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: default;
+}
+
+.cert-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 32px rgba(0, 45, 103, 0.1);
+}
+
+.cert-card--special {
+  border-top: 3px solid #e63329;
+}
+
+.cert-card__icon-ring {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 3px solid #1a7dc4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.cert-card__icon-ring .material-symbols-outlined {
+  font-size: 38px;
+}
+
+.cert-card__label {
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.cert-card__desc {
+  font-size: 12px;
+  color: var(--on-surface-variant);
+  line-height: 1.5;
+}
+
+@media (max-width: 1000px) {
+  .certifications__grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 640px) {
+  .certifications__grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 380px) {
+  .certifications__grid { grid-template-columns: 1fr; }
+}
