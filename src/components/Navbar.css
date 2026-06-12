@@ -47,15 +47,16 @@
 
 /* Logo */
 .navbar__logo img {
-  height: 40px;
+  height: 58px;
   width: auto;
   object-fit: contain;
   display: block;
   transition: height 0.4s ease;
+  margin-top: 1rem;
 }
 
 .navbar--scrolled .navbar__logo img {
-  height: 34px;
+  height: 49px;
 }
 
 /* ── Nav links ── */
@@ -77,17 +78,39 @@
 }
 
 /* Transparent links — white */
-.navbar--transparent .navbar__link { color: rgba(255,255,255,0.85); }
-.navbar--transparent .navbar__link:hover { color: #fff; border-bottom-color: rgba(255,255,255,0.5); }
-.navbar--transparent .navbar__link--active { color: #fff; border-bottom-color: #fff; }
+.navbar--transparent .navbar__link {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.navbar--transparent .navbar__link:hover {
+  color: #fff;
+  border-bottom-color: rgba(255, 255, 255, 0.5);
+}
+
+.navbar--transparent .navbar__link--active {
+  color: #fff;
+  border-bottom-color: #fff;
+}
 
 /* Scrolled links — dark */
-.navbar--scrolled .navbar__link { color: var(--on-surface-variant); }
-.navbar--scrolled .navbar__link:hover { color: var(--primary); }
-.navbar--scrolled .navbar__link--active { color: var(--primary); border-bottom-color: var(--primary); }
+.navbar--scrolled .navbar__link {
+  color: var(--on-surface-variant);
+}
+
+.navbar--scrolled .navbar__link:hover {
+  color: var(--primary);
+}
+
+.navbar--scrolled .navbar__link--active {
+  color: var(--primary);
+  border-bottom-color: var(--primary);
+}
 
 /* ── Contact button ── */
-.navbar__actions { display: flex; align-items: center; }
+.navbar__actions {
+  display: flex;
+  align-items: center;
+}
 
 .btn--primary {
   background: var(--primary);
@@ -111,12 +134,13 @@
 
 /* On transparent hero — ghost button */
 .navbar--transparent .btn--primary {
-  background: rgba(255,255,255,0.15);
-  border: 1px solid rgba(255,255,255,0.55);
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.55);
   backdrop-filter: blur(8px);
 }
+
 .navbar--transparent .btn--primary:hover {
-  background: rgba(255,255,255,0.28);
+  background: rgba(255, 255, 255, 0.28);
 }
 
 /* ── Hamburger ── */
@@ -124,8 +148,14 @@
   display: none;
   transition: color 0.3s;
 }
-.navbar--transparent .navbar__hamburger { color: #fff; }
-.navbar--scrolled .navbar__hamburger   { color: var(--primary); }
+
+.navbar--transparent .navbar__hamburger {
+  color: #fff;
+}
+
+.navbar--scrolled .navbar__hamburger {
+  color: var(--primary);
+}
 
 /* ── Mobile menu ── */
 .navbar__mobile-menu {
@@ -133,7 +163,7 @@
   flex-direction: column;
   padding: 16px 24px 24px;
   border-top: 1px solid var(--outline-variant);
-  background: rgba(255,255,255,0.97);
+  background: rgba(255, 255, 255, 0.97);
   gap: 4px;
   border-radius: 0 0 24px 24px;
 }
@@ -148,6 +178,7 @@
   text-transform: uppercase;
   transition: background 0.2s, color 0.2s;
 }
+
 .navbar__mobile-link:hover,
 .navbar__mobile-link--active {
   color: var(--primary);
@@ -163,10 +194,21 @@
 
 /* ── Responsive ── */
 @media (max-width: 900px) {
-  .navbar__nav     { display: none; }
-  .navbar__actions { display: none; }
-  .navbar__hamburger { display: block; }
-  .navbar__mobile-menu { display: flex; }
+  .navbar__nav {
+    display: none;
+  }
+
+  .navbar__actions {
+    display: none;
+  }
+
+  .navbar__hamburger {
+    display: block;
+  }
+
+  .navbar__mobile-menu {
+    display: flex;
+  }
 
   /* On mobile, pill still works but full-width */
   .navbar--scrolled {
