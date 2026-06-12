@@ -1,7 +1,7 @@
 import './Impact.css';
 
 const HERO_IMG =
-  'https://lh3.googleusercontent.com/aida/ADBb0uiX82WZQ9ITri3PXE61PfJMxRKcubqxuJNNRzvb0YygiJKHUIaBZH5hcAABZpmQdY7UhFGv2CC6LNpy4VooknPUIfEX5532ydXboXFatV4nmwY0YEThXKSBFozImucIGs87UedEGjgRRGq_ejytmuQoD8I2m7jb447b8v0ZmcAoXw-vLpz4mVp7xgibGtMMPcDH0g6XktITyiyOK7icYBoJ5Kynm4dHqYde5TlcXMU57_pujdoYftzAyqaX';
+  'https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1200';
 
 const IMPACT_CARDS = [
   {

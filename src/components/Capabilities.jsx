@@ -1,19 +1,12 @@
 import './Capabilities.css';
 
 const IMG_CITY =
-  'https://lh3.googleusercontent.com/aida/ADBb0ujKKoBj0rz0PlgP43LMJ7oJD_N-bN4Qu73e9Tfxrp1KA5EtiSCrWJElk1YoneIvZCkE3HVrdTT70PtTM1iS42uQe50qVAisTyCo58nV8FQGdIvXqKGtzoGXQ701b92Mk9uzcpKChnUlsIFotYrFVG7JflK51UKRFxJXxIL_J8Cf4GxX10d6jaYQLYraSH17Yx-xA1X9fYBPlkbXKCvlgwtDyOpUVkJZPN38L9EckNYxmkQ1Yq3kjKfP-aU';
+  'https://images.unsplash.com/photo-1573804633927-bfcbcd909acd?q=80&w=800';
 
 const IMG_AI =
-  'https://lh3.googleusercontent.com/aida/ADBb0uiE_Gfs3IwULYV7V7FsAv7Ndigbp6eUG0oZeEFuVifenpcUEJYnUSxNUobfuvEa6Fr3nLe-dx9y_e0VjpbgBrHjmCVLF3YffNxQhmqo6gOQDy7-_aiKvE31-jGka1g_7YQ5spAcC3Qz_KaVz3tu2DjhmBy7F-MSpCrpGpDUcYzC4y4BqNGhbKjLe7VXn3q5gAGEGkEgW5deuAN5jdvVbiV0M_1wPX_HDl09VrxYzwynbF0DmGTCHQGQu6w0';
+  'https://images.unsplash.com/photo-1557597774-9d273605dfa9?q=80&w=800';
 
 const CAPABILITIES = [
-  {
-    icon: 'hub',
-    title: 'Master System Integration',
-    desc: 'Unifying ELV, networking, BMS, access control, and surveillance into one intelligent, centralised command ecosystem.',
-    tags: ['ELV Systems', 'BMS', 'PSIM'],
-    accent: '#3b82f6',
-  },
   {
     icon: 'security',
     title: 'Next-Gen Surveillance',
@@ -22,25 +15,11 @@ const CAPABILITIES = [
     accent: '#8b5cf6',
   },
   {
-    icon: 'fingerprint',
-    title: 'Biometric Identity',
-    desc: 'Multi-modal biometric solutions — face, fingerprint, and iris — for secure access control and workforce management.',
-    tags: ['Face ID', 'Fingerprint', 'IRIS'],
-    accent: '#06b6d4',
-  },
-  {
     icon: 'wifi',
     title: 'Network Infrastructure',
     desc: 'End-to-end structured cabling, fibre optic networks, and wireless systems engineered for maximum uptime and resilience.',
     tags: ['Structured Cabling', 'Fiber', 'Wi-Fi 6'],
     accent: '#10b981',
-  },
-  {
-    icon: 'psychology',
-    title: 'AI & Edge Computing',
-    desc: 'Edge-based deep learning processing enables real-time intelligence at the source — reducing latency, bandwidth and cost.',
-    tags: ['Edge AI', 'GPU Servers', 'NAS/SAN'],
-    accent: '#f59e0b',
   },
   {
     icon: 'support_agent',

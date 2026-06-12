@@ -10,14 +10,7 @@ const SOLUTIONS = [
     hasBg: true,
     bg: '/bg.png',
   },
-  {
-    id: 'ai-storage',
-    icon: 'science',
-    tag: 'AI-Driven Tools',
-    title: 'AI & Storage',
-    desc: 'We offer customers AI-driven tools for real-time surveillance and operational optimization.',
-    bg: 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80',
-  },
+
   {
     id: 'smart-cities',
     icon: 'grid_view',
@@ -26,22 +19,8 @@ const SOLUTIONS = [
     desc: 'We support various initiatives through IoT-enabled solutions that include traffic monitoring and people counting.',
     bg: 'https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?auto=format&fit=crop&q=80',
   },
-  {
-    id: 'biometric',
-    icon: 'fingerprint',
-    tag: 'Enrolment & Authentication',
-    title: 'Biometric Solutions',
-    desc: 'We offer a range of biometric solutions that include biometric enrolment and authentication systems.',
-    bg: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&q=80',
-  },
-  {
-    id: 'it-infra',
-    icon: 'dns',
-    tag: 'IT Services',
-    title: 'IT Infrastructure',
-    desc: 'We offer our customers a comprehensive suite of IT services ranging from designing and deploying communication infrastructure.',
-    bg: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80',
-  },
+
+
   {
     id: 'e-surveillance',
     icon: 'security_camera',
@@ -54,14 +33,7 @@ const SOLUTIONS = [
 
 /* ── Our Products ───────────────────────────────────── */
 const PRODUCTS = [
-  {
-    id: 'storepulse',
-    icon: 'storefront',
-    tag: 'AI Video Analytics',
-    title: 'StorePulse',
-    desc: 'Our StorePulse software is an AI-powered video analytics tool that integrates with CCTV systems to cater to unique operational needs.',
-    bg: 'https://images.unsplash.com/photo-1555664424-778a1e5e1b48?auto=format&fit=crop&q=80',
-  },
+
   {
     id: 'camstore',
     icon: 'photo_camera',
@@ -78,14 +50,7 @@ const PRODUCTS = [
     desc: 'Our CheckCam software is a CCTV network health monitoring system designed to optimize and safeguard surveillance infrastructure.',
     bg: 'https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&q=80',
   },
-  {
-    id: 'id1',
-    icon: 'badge',
-    tag: 'Attendance Solution',
-    title: 'Id1',
-    desc: 'Our ID1 software provides a secure, contactless centralized attendance solution integrated with multiple biometric modalities.',
-    bg: 'https://images.unsplash.com/photo-1616423640778-28d1b53229bd?auto=format&fit=crop&q=80',
-  },
+
 ];
 
 /* ── Our Services ───────────────────────────────────── */

@@ -2,11 +2,6 @@ import './ProductsSolutions.css';
 
 const PRODUCTS = [
   {
-    icon: 'store',
-    title: 'StorePulse',
-    desc: 'Intelligent retail analytics platform powered by AI for footfall tracking, queue management, and store behaviour insights.',
-  },
-  {
     icon: 'photo_camera',
     title: 'CamStore',
     desc: 'Cloud-based surveillance storage solution offering scalable, secure video archiving with instant retrieval and remote access.',
@@ -20,16 +15,6 @@ const PRODUCTS = [
     icon: 'camera_outdoor',
     title: 'Video Surveillance Solutions',
     desc: 'End-to-end CCTV and IP camera ecosystems with centralised monitoring, AI-powered alerts, and seamless VMS integration.',
-  },
-  {
-    icon: 'psychology',
-    title: 'AI and Storage Solutions',
-    desc: 'Deep learning analytics on the edge, integrated with high-capacity NAS/SAN storage for real-time threat intelligence.',
-  },
-  {
-    icon: 'fingerprint',
-    title: 'Biometric Solutions',
-    desc: 'Multi-modal biometric systems—fingerprint, face, iris—for secure access control, attendance, and identity verification.',
   },
 ];
 

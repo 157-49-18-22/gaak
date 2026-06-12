@@ -7,16 +7,14 @@ import Footer from './components/Footer';
 
 /* Home page sections */
 import Hero from './components/Hero';
-import Stats from './components/Stats';
 import ProductsSolutions from './components/ProductsSolutions';
 import Capabilities from './components/Capabilities';
 import Industries from './components/Industries';
 import Strengths from './components/Strengths';
-import Timeline from './components/Timeline';
 import Certifications from './components/Certifications';
 import Impact from './components/Impact';
 import CaseStudies from './components/CaseStudies';
-import Testimonials from './components/Testimonials';
+
 import CTA from './components/CTA';
 
 /* Pages */
@@ -30,16 +28,14 @@ function HomePage() {
   return (
     <main>
       <Hero />
-      <Stats />
       <ProductsSolutions />
       <Capabilities />
       <Industries />
       <Strengths />
-      <Timeline />
       <Certifications />
       <Impact />
       <CaseStudies />
-      <Testimonials />
+
       <CTA />
     </main>
   );
@@ -50,12 +46,12 @@ export default function App() {
     <BrowserRouter>
       <Navbar />
       <Routes>
-        <Route path="/"          element={<HomePage />} />
-        <Route path="/about"     element={<AboutUs />} />
-        <Route path="/products"  element={<Products />} />
+        <Route path="/" element={<HomePage />} />
+        <Route path="/about" element={<AboutUs />} />
+        <Route path="/products" element={<Products />} />
         <Route path="/circulars" element={<Circulars />} />
-        <Route path="/careers"   element={<Careers />} />
-        <Route path="/contact"   element={<Contact />} />
+        <Route path="/careers" element={<Careers />} />
+        <Route path="/contact" element={<Contact />} />
       </Routes>
       <Footer />
     </BrowserRouter>
